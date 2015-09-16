@@ -1,0 +1,11 @@
+--- a/flarum/bootstrap.php	2015-09-15 23:05:42.000000000 +0800
++++ b/flarum/bootstrap.php	2015-09-16 16:43:57.835708501 +0800
+@@ -37,7 +37,7 @@
+     $app->instance('flarum.config', include $configFile);
+ }
+ 
+-date_default_timezone_set('UTC');
++date_default_timezone_set('PRC');
+ 
+ $app->instance('config', $config = new ConfigRepository([
+     'view' => [

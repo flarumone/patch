@@ -1,0 +1,10 @@
+--- a/flarum/vendor/flarum/core/src/Core/Users/UserRepository.php	2015-09-16 15:34:35.000000000 +0800
++++ b/flarum/vendor/flarum/core/src/Core/Users/UserRepository.php	2015-09-16 16:58:07.135665051 +0800
+@@ -74,6 +74,7 @@
+      */
+     public function getIdForUsername($username, User $actor = null)
+     {
++        $username = rawurldecode($username);
+         $query = User::where('username', 'like', $username);
+ 
+         return $this->scopeVisibleTo($query, $actor)->pluck('id');
