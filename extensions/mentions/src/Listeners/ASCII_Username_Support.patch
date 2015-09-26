@@ -1,0 +1,33 @@
+diff -Nrua a/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php b/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php
+--- a/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php	2015-09-17 07:39:42.000000000 +0800
++++ b/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php	2015-09-26 11:23:13.076757336 +0800
+@@ -41,7 +41,7 @@
+             ->prepend([static::class, 'addId'])
+             ->setJS('function() { return true; }');
+ 
+-        $configurator->Preg->match('/\B@(?<username>[a-z0-9_-]+)#(?<id>\d+)/i', $tagName);
++        $configurator->Preg->match('/\B@(?<username>[-_a-zA-Z0-9\x7f-\xff]+)#(?<id>\d+)/i', $tagName);
+     }
+ 
+     public static function addId($tag)
+diff -Nrua a/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php a/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php
+--- a/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php	2015-09-17 07:39:42.000000000 +0800
++++ b/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php	2015-09-26 11:22:51.836758423 +0800
+@@ -47,7 +47,7 @@
+             ->addParameterByName('userRepository')
+             ->setJS('function() { return true; }');
+ 
+-        $configurator->Preg->match('/\B@(?<username>[a-z0-9_-]+)(?!#)/i', $tagName);
++        $configurator->Preg->match('/\B@(?<username>[-_a-zA-Z0-9\x7f-\xff]+)(?!#)/i', $tagName);
+     }
+ 
+     public function parse(FormatterParser $event)
+@@ -63,7 +63,7 @@
+ 
+     public static function addId($tag, UserRepository $users)
+     {
+-        if ($id = $users->getIdForUsername($tag->getAttribute('username'))) {
++        if ($id = $users->getIdForUsername(rawurlencode($tag->getAttribute('username')))) {
+             $tag->setAttribute('id', $id);
+ 
+             return true;

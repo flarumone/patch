@@ -3,6 +3,11 @@
 ###目录结构和说明
 ```
 patch
+├── extensions
+│   └── mentions
+│       └── src
+│           └── Listeners
+│               └── ASCII_Username_Support.patch #修复无法`@`中文用户名
 ├── flarum
 │   ├── bootstrap.php.patch #修改默认时区为中国
 │   └── vendor
