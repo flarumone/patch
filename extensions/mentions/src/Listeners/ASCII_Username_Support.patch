@@ -1,4 +1,3 @@
-diff -Nrua a/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php b/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php
 --- a/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php	2015-09-17 07:39:42.000000000 +0800
 +++ b/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php	2015-09-26 11:23:13.076757336 +0800
 @@ -41,7 +41,7 @@
@@ -10,7 +9,6 @@ diff -Nrua a/extensions/mentions/src/Listeners/AddPostMentionsFormatter.php b/ex
      }
  
      public static function addId($tag)
-diff -Nrua a/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php a/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php
 --- a/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php	2015-09-17 07:39:42.000000000 +0800
 +++ b/extensions/mentions/src/Listeners/AddUserMentionsFormatter.php	2015-09-26 11:22:51.836758423 +0800
 @@ -47,7 +47,7 @@
