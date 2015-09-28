@@ -4,6 +4,11 @@
 ```
 patch
 ├── extensions
+│   ├── akismet
+│   │   └── vendor
+│   │       └── tijsverkoyen
+│   │           └── akismet
+│   │               └── add_forward_compatible_for_php_5_5.patch #修复`akismet`插件验证中文回复时的一处错误@oott123
 │   └── mentions
 │       └── src
 │           └── Listeners
