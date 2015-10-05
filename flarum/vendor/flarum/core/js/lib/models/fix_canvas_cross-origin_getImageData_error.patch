@@ -1,0 +1,16 @@
+Index: flarumone/flarum/vendor/flarum/core/js/lib/models/User.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- flarumone/flarum/vendor/flarum/core/js/lib/models/User.js	(revision bae061b6fd2d98b1010fd1b8e7dc45d094ccac2f)
++++ flarumone/flarum/vendor/flarum/core/js/lib/models/User.js	(revision )
+@@ -85,6 +85,8 @@
+     const image = new Image();
+     const user = this;
+ 
++    image.crossOrigin="";
++
+     image.onload = function() {
+       const colorThief = new ColorThief();
+       user.avatarColor = colorThief.getColor(this);
