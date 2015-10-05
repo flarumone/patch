@@ -2,7 +2,7 @@
 +++ b/flarum/vendor/flarum/core/less/lib/lib.less	2015-09-16 16:39:29.975722204 +0800
 @@ -1,4 +1,4 @@
 -@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,600);
-+@import url(//fonts.lug.ustc.edu.cn/css?family=Open+Sans:400italic,700italic,400,700,600);
++@import url(//cdn.css.net/fonts/css?family=Open+Sans:400italic,700italic,400,700,600);
  
  @import "font-awesome.less";
  @fa-font-path: "../../assets/fonts";
